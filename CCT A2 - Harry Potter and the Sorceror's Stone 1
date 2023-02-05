@@ -1,0 +1,20 @@
+CCT A2 - Harry Potter and the Sorceror's Stone 1
+
+n = int(input())
+worth = list(map(int,input().split()))[:n]
+q,x = map(int,input().split())
+bag = []
+coins=0
+ans = 0
+for i in range(q):
+    command = input()
+    if command == "Harry":
+        bag.append(worth[coins])
+        coins = coins + 1
+    if command == "Remove":
+        if bag != []:
+            del bag[len(bag) - 1]
+    if sum(bag) == x:
+        ans = len(bag)
+        break
+print(ans)
